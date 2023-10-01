@@ -2,6 +2,10 @@ extends Node2D
 
 @onready var level_000 = preload("res://Scenes/level_000.tscn")
 @onready var level_001 = preload("res://Scenes/level_001.tscn")
+@onready var level_002 = preload("res://Scenes/level_002.tscn")
+@onready var level_003 = preload("res://Scenes/level_003.tscn")
+@onready var level_004 = preload("res://Scenes/level_004.tscn")
+
 @onready var ship_scene = preload("res://Scenes/ship.tscn")
 
 var ship = null
@@ -10,7 +14,7 @@ var level_scenes = []
 var level_index = 0
 
 func _ready():
-	level_scenes = [level_000, level_001]
+	level_scenes = [level_000, level_001, level_002, level_003, level_004]
 	load_next_level()
 
 func _process(_delta):

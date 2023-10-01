@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://comdoscugpte"]
+
+[ext_resource type="Script" path="res://Scripts/level.gd" id="1_phhfg"]
+[ext_resource type="PackedScene" uid="uid://urbmxrbm5dmn" path="res://Scenes/ending portal.tscn" id="2_6pprn"]
+[ext_resource type="PackedScene" uid="uid://bvui8x57xm0hy" path="res://Scenes/block.tscn" id="3_5hpp7"]
+
+[node name="level dynamic" type="Node2D"]
+script = ExtResource("1_phhfg")
+
+[node name="ship_start" type="Node2D" parent="."]
+position = Vector2(225, 450)
+
+[node name="ending_portal" parent="." instance=ExtResource("2_6pprn")]
+position = Vector2(565, 450)
+
+[node name="blocks" type="Node2D" parent="."]
+
+[node name="bot left" parent="blocks" instance=ExtResource("3_5hpp7")]
+position = Vector2(-550, 250)
+scale = Vector2(12.235, 12.235)
+velocity = Vector2(0.1, 0)
+force_multipliers = Vector2(-200, 0)
+
+[node name="bot right" parent="blocks" instance=ExtResource("3_5hpp7")]
+position = Vector2(1350, 250)
+scale = Vector2(12.235, 12.235)
+velocity = Vector2(-0.1, 0)
+force_multipliers = Vector2(-200, 0)
+
+[node name="middle block" parent="blocks" instance=ExtResource("3_5hpp7")]
+position = Vector2(400, 850)
+scale = Vector2(2, 10)
+velocity = Vector2(0, -0.1)
+force_multipliers = Vector2(-200, -200)
+
+[connection signal="body_entered" from="ending_portal" to="ending_portal" method="_on_body_entered"]
