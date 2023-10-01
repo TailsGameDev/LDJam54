@@ -8,28 +8,33 @@
 script = ExtResource("1_8ehy8")
 
 [node name="ship_start" type="Node2D" parent="."]
-position = Vector2(100, 400)
+position = Vector2(400, 450)
 
 [node name="ending_portal" parent="." instance=ExtResource("2_8bt2v")]
-position = Vector2(700, 400)
+position = Vector2(750, 250)
 
-[node name="bot block" parent="." instance=ExtResource("3_wipcf")]
-position = Vector2(400, 1237)
-rotation = 0.785398
+[node name="blocks" type="Node2D" parent="."]
+
+[node name="bot block left" parent="blocks" instance=ExtResource("3_wipcf")]
+position = Vector2(-400, 1000)
 scale = Vector2(12.235, 12.235)
-velocity = Vector2(0, -0.2)
+velocity = Vector2(0.1, -0.1)
 force_multipliers = Vector2(-200, -200)
 
-[node name="top left block" parent="." instance=ExtResource("3_wipcf")]
-position = Vector2(-393, -371)
-rotation = 0.785398
+[node name="bot block right" parent="blocks" instance=ExtResource("3_wipcf")]
+position = Vector2(1200, 1000)
+scale = Vector2(12.235, 12.235)
+velocity = Vector2(-0.1, -0.1)
+force_multipliers = Vector2(-200, -200)
+
+[node name="top left block" parent="blocks" instance=ExtResource("3_wipcf")]
+position = Vector2(-400, -500)
 scale = Vector2(12.235, 12.235)
 velocity = Vector2(0.1, 0.1)
 force_multipliers = Vector2(-200, -200)
 
-[node name="top right block" parent="." instance=ExtResource("3_wipcf")]
-position = Vector2(1147, -386)
-rotation = 0.785398
+[node name="top right block" parent="blocks" instance=ExtResource("3_wipcf")]
+position = Vector2(1200, -500)
 scale = Vector2(12.235, 12.235)
 velocity = Vector2(-0.1, 0.1)
 force_multipliers = Vector2(-200, -200)
