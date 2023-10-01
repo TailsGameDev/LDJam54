@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://cs5vo74da0y41"]
+
+[ext_resource type="Script" path="res://Scripts/game_god.gd" id="1_wqm13"]
+[ext_resource type="PackedScene" uid="uid://bvui8x57xm0hy" path="res://Scenes/block.tscn" id="2_hvouy"]
+[ext_resource type="PackedScene" uid="uid://mp6op0h3tskn" path="res://Scenes/level_000.tscn" id="4_br5rn"]
+
+[node name="testing ground" type="Node2D"]
+script = ExtResource("1_wqm13")
+
+[node name="walls" type="Node2D" parent="."]
+
+[node name="block top" parent="walls" instance=ExtResource("2_hvouy")]
+position = Vector2(400, -250)
+scale = Vector2(8, 5)
+force_multipliers = Vector2(0, -200)
+
+[node name="block bottom" parent="walls" instance=ExtResource("2_hvouy")]
+position = Vector2(400, 750)
+scale = Vector2(8, 5)
+force_multipliers = Vector2(0, -200)
+
+[node name="block left" parent="walls" instance=ExtResource("2_hvouy")]
+position = Vector2(-50, 250)
+scale = Vector2(1, 18.15)
+force_multipliers = Vector2(-200, 0)
+
+[node name="block right" parent="walls" instance=ExtResource("2_hvouy")]
+position = Vector2(850, 250)
+scale = Vector2(1, 19.03)
+force_multipliers = Vector2(-200, 0)
+
+[node name="level_000" parent="." instance=ExtResource("4_br5rn")]

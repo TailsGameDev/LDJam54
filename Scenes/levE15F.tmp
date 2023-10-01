@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://mp6op0h3tskn"]
+
+[ext_resource type="Script" path="res://Scripts/level.gd" id="1_2dnax"]
+[ext_resource type="PackedScene" uid="uid://urbmxrbm5dmn" path="res://Scenes/ending portal.tscn" id="1_wdlcf"]
+[ext_resource type="PackedScene" uid="uid://bvui8x57xm0hy" path="res://Scenes/block.tscn" id="3_dgq1c"]
+
+[node name="level dynamic" type="Node2D"]
+script = ExtResource("1_2dnax")
+
+[node name="ship_start" type="Node2D" parent="."]
+position = Vector2(100, 400)
+
+[node name="ending_portal" parent="." instance=ExtResource("1_wdlcf")]
+position = Vector2(168, 330)
+
+[node name="bot block" parent="." instance=ExtResource("3_dgq1c")]
+position = Vector2(400, 1237)
+rotation = 0.785398
+scale = Vector2(12.235, 12.235)
+velocity = Vector2(0, -0.2)
+force_multipliers = Vector2(-200, -200)
+
+[node name="top left block" parent="." instance=ExtResource("3_dgq1c")]
+position = Vector2(-393, -371)
+rotation = 0.785398
+scale = Vector2(12.235, 12.235)
+velocity = Vector2(0.1, 0.1)
+force_multipliers = Vector2(-200, -200)
+
+[node name="top right block" parent="." instance=ExtResource("3_dgq1c")]
+position = Vector2(1147, -386)
+rotation = 0.785398
+scale = Vector2(12.235, 12.235)
+velocity = Vector2(-0.1, 0.1)
+force_multipliers = Vector2(-200, -200)
+
+[connection signal="body_entered" from="ending_portal" to="ending_portal" method="_on_body_entered"]

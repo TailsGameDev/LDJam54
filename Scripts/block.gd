@@ -6,7 +6,7 @@ extends Area2D
 var ship_vel
 var ship
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	# push ship away
 	if self.ship != null:
 		if ship.get_vel_length() < ship_vel.length():
@@ -19,13 +19,14 @@ func _physics_process(delta):
 	self.position = self.position + self.velocity
 
 func _on_body_entered(body):
-	#print("enter")
-	self.ship = body
-	self.ship_vel = body.linear_velocity
-	body.enable_input(false)
+	if body is Ship:
+		self.ship = body
+		self.ship_vel = body.linear_velocity
+		body.enable_input(false)
 
 func _on_body_exited(body):
-	self.ship = null
-	self.ship_vel = null
-	body.enable_input(true)
+	if body is Ship:
+		self.ship = null
+		self.ship_vel = null
+		body.enable_input(true)
 

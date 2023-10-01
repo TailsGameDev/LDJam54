@@ -10,11 +10,11 @@ var input_enabled
 func _ready():
 	input_enabled = true
 
-func _process(delta):
+func _process(_delta):
 	self.left = Input.is_action_pressed("left")
 	self.right = Input.is_action_pressed("right")
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if (input_enabled):
 		var force
 		if left or right:
@@ -41,3 +41,9 @@ func get_vel_length():
 # so they can push the ship away
 func enable_input(enable):
 	self.input_enabled = enable
+
+func destroy_self():
+	queue_free()
+
+func external_set_position(new_position):
+	self.position = new_position
