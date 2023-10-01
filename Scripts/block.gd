@@ -17,7 +17,6 @@ func _on_body_entered(body):
 	#print("enter")
 	self.ship = body
 	self.ship_vel = body.linear_velocity
-	#print("ship: "+str(ship_vel.x)+","+str(ship_vel.y))
 	body.enable_input(false)
 
 func _on_body_exited(body):
