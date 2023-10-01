@@ -4,28 +4,30 @@
 [ext_resource type="PackedScene" uid="uid://cnco7x5ihdfj6" path="res://Scenes/ship.tscn" id="2_ho2qi"]
 [ext_resource type="PackedScene" uid="uid://bvui8x57xm0hy" path="res://Scenes/block.tscn" id="3_odhcd"]
 
-[node name="Level 001" type="Node2D"]
+[node name="testing ground" type="Node2D"]
 script = ExtResource("1_tajx1")
 
 [node name="ship" parent="." instance=ExtResource("2_ho2qi")]
 position = Vector2(400, 250)
 
-[node name="block" parent="." instance=ExtResource("3_odhcd")]
+[node name="walls" type="Node2D" parent="."]
+
+[node name="block top" parent="walls" instance=ExtResource("3_odhcd")]
 position = Vector2(400, -250)
 scale = Vector2(8, 5)
 force_multipliers = Vector2(0, -200)
 
-[node name="block2" parent="." instance=ExtResource("3_odhcd")]
+[node name="block bottom" parent="walls" instance=ExtResource("3_odhcd")]
 position = Vector2(400, 750)
 scale = Vector2(8, 5)
 force_multipliers = Vector2(0, -200)
 
-[node name="block3" parent="." instance=ExtResource("3_odhcd")]
+[node name="block left" parent="walls" instance=ExtResource("3_odhcd")]
 position = Vector2(-50, 250)
 scale = Vector2(1, 18.15)
 force_multipliers = Vector2(-200, 0)
 
-[node name="block4" parent="." instance=ExtResource("3_odhcd")]
+[node name="block right" parent="walls" instance=ExtResource("3_odhcd")]
 position = Vector2(850, 250)
 scale = Vector2(1, 19.03)
 force_multipliers = Vector2(-200, 0)
