@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://urbmxrbm5dmn"]
+
+[ext_resource type="Script" path="res://Scripts/portal.gd" id="1_des6a"]
+[ext_resource type="Texture2D" uid="uid://dq0tqfi573orc" path="res://Sprites/Circle 128.png" id="2_tjwjp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gf4lw"]
+
+[node name="ending portal" type="Area2D"]
+script = ExtResource("1_des6a")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("2_tjwjp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1.8, 1.8)
+shape = SubResource("CircleShape2D_gf4lw")

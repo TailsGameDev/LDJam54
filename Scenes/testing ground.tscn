@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cs5vo74da0y41"]
+[gd_scene load_steps=5 format=3 uid="uid://cs5vo74da0y41"]
 
 [ext_resource type="Script" path="res://Scripts/game_god.gd" id="1_tajx1"]
 [ext_resource type="PackedScene" uid="uid://cnco7x5ihdfj6" path="res://Scenes/ship.tscn" id="2_ho2qi"]
 [ext_resource type="PackedScene" uid="uid://bvui8x57xm0hy" path="res://Scenes/block.tscn" id="3_odhcd"]
+[ext_resource type="PackedScene" uid="uid://urbmxrbm5dmn" path="res://Scenes/ending portal.tscn" id="4_yblaq"]
 
 [node name="testing ground" type="Node2D"]
 script = ExtResource("1_tajx1")
@@ -31,3 +32,6 @@ force_multipliers = Vector2(-200, 0)
 position = Vector2(850, 250)
 scale = Vector2(1, 19.03)
 force_multipliers = Vector2(-200, 0)
+
+[node name="ending portal" parent="." instance=ExtResource("4_yblaq")]
+position = Vector2(496, 211)

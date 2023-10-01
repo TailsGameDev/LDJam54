@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://mp6op0h3tskn"]
+
+[node name="level dynamic" type="Node2D"]
+
+[node name="ship start point" type="Node2D" parent="."]
